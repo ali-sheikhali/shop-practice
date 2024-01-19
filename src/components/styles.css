@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap");
+
+body {
+  text-align: right;
+  font-family: "Vazirmatn", sans-serif;
+}
+nav button {
+  font-family: "Vazirmatn", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  width: 90vw;
+  margin: auto;
+}
+
+/* navbar */
+
+nav a {
+  color: black;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: blue;
+}
+
+nav {
+  color: black;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  margin-right: 20px;
+}
+
+.search-box input {
+  border-radius: 1rem;
+  /* padding: 4px; */
+}
+
+.navbar-right button {
+  margin-left: 10px;
+  padding: 4px 16px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.navbar-right .login-button {
+  border: none;
+  color: white;
+  background-color: #333;
+}
+
+.navlinks {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  gap: 2rem;
+}
+
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.box {
+  min-width: 10rem;
+  padding: 4px 1rem;
+  margin: 10px;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 6px;
+}
+
+.box.active {
+  border-color: blue;
+}
+
+.box p {
+  white-space: nowrap;
+  margin: 0;
+}
+
+.box img {
+  width: 100%;
+  max-width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* about page */
+
+.about {
+  padding: 2rem;
+  border: dashed 1px grey;
+}
+
+/* carrier page */
+
+.career {
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.career form {
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checkbox-container {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* footer */
+
+footer {
+  width: 100%;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(183, 183, 183);
+  padding: 1rem 4rem;
+}
+
+.footer-column {
+  direction: rtl;
+  flex: 1;
+  padding: 10px;
+}
+
+.footer-column h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 5px;
+}
+
+.icons-desc {
+  text-align: center;
+}
+.icon-links {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.icon-links a {
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.icon-links img {
+  width: 30px;
+  height: auto;
+}
