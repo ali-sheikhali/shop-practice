@@ -72,7 +72,6 @@ function Products() {
                 src={item.img}
                 alt=""
               />
-              {/* <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 hover:opacity-100 ">view Detail</p> */}
             </figure>
             <div className="py-3 px-5 text-left">
               <p>{item.title}</p>
