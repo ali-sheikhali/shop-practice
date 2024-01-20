@@ -6,15 +6,19 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   const [showName, setShowName] = useState(false);
+  const [submittedName, setSubmittedName] = useState("");
   const handleClick = () => {
     setShowName(true);
+  };
+  const onFormSubmit = (name) => {
+    setSubmittedName(name);
   };
   return (
     <div>
       <header>
         <nav>
-          <div class="navbar-left">
-            <div class="search-box">
+          <div className="navbar-left">
+            <div className="search-box">
               <input
                 className="border border-black px-5 py-1 focus:outline-none"
                 type="text"
@@ -23,18 +27,25 @@ function Navbar() {
             </div>
           </div>
           <h1>Shoes Shop</h1>
-          <div class="navbar-right">
-            {showName && <Login open={showName} setOpen={setShowName} />}
-            <button class="login-button" onClick={handleClick}>
+          <div className="navbar-right">
+            {showName && (
+              <Login
+                open={showName}
+                setOpen={setShowName}
+                onFormSubmit={onFormSubmit}
+              />
+            )}
+            <button className="login-button" onClick={handleClick}>
               ورود
             </button>
+            {submittedName}
             <Link to="/cart">
               <button className="">سبد خرید </button>
             </Link>
             <button>عضویت</button>
           </div>
         </nav>
-        <div class="navlinks">
+        <div className="navlinks">
           <a href="#">برندها</a>
           <a href="#">تخفیف</a>
           <a href="#">ورزشی</a>
@@ -43,41 +54,41 @@ function Navbar() {
           <a href="#">مردانه</a>
         </div>
         <hr />
-        <div class="box-container">
-          <a href="#" class="box-link">
-            <div class="box">
-              <i class="fa-solid fa-lock"></i>
+        <div className="box-container">
+          <a href="#" className="box-link">
+            <div className="box">
+              <i className="fa-solid fa-lock"></i>
               <p>حریم خصوصی</p>
             </div>
           </a>
-          <a href="#" class="box-link">
-            <div class="box">
-              <i class="fa fa-user"></i>
+          <a href="#" className="box-link">
+            <div className="box">
+              <i className="fa fa-user"></i>
               <p>تقاضای همکاری</p>
             </div>
           </a>
-          <a href="#" class="box-link">
-            <div class="box">
-              <i class="fa-solid fa-angle-left"></i>
+          <a href="#" className="box-link">
+            <div className="box">
+              <i className="fa-solid fa-angle-left"></i>
               <p>شرایط بازگرداندن</p>
             </div>
           </a>
-          <a href="#" class="box-link">
-            <div class="box">
-              <i class="fa-solid fa-question"></i>
+          <a href="#" className="box-link">
+            <div className="box">
+              <i className="fa-solid fa-question"></i>
               <p>راهنمای انتخاب سایز کفش</p>
             </div>
           </a>
-          <a href="#" class="box-link">
-            <div class="box">
-              <i class="fa-solid fa-envelope"></i>
+          <a href="#" className="box-link">
+            <div className="box">
+              <i className="fa-solid fa-envelope"></i>
 
               <p>تماس با ما</p>
             </div>
           </a>
-          <a href="#" class="box-link">
-            <div class="box active">
-              <i class="fa-regular fa-comment-dots"></i>
+          <a href="#" className="box-link">
+            <div className="box active">
+              <i className="fa-regular fa-comment-dots"></i>
               <p>درباره ما</p>
             </div>
           </a>

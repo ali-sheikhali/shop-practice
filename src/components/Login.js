@@ -1,16 +1,26 @@
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-export default function Login({ open, setOpen }) {
+export default function Login({ open, setOpen, onFormSubmit }) {
   const cancelButtonRef = useRef(null);
 
+  const [name,setName] = useState("")
+  
+  const handleName = (e) =>{
+    setName(e.target.value)
+  }
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    onFormSubmit(name)
+    setOpen(false)
+  }
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog
         as="div"
         className="relative z-10"
         initialFocus={cancelButtonRef}
-        onClose={setOpen}
+        onClose={() => setOpen(false)} 
       >
         <Transition.Child
           as={Fragment}
@@ -35,7 +45,7 @@ export default function Login({ open, setOpen }) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+              <Dialog className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                 <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                     <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
                       <Dialog.Title
@@ -45,10 +55,10 @@ export default function Login({ open, setOpen }) {
                         ورود
                       </Dialog.Title>
                       <div className="mt-2">
-                        <form action="" className="flex flex-col space-y-3">
+                        <form  onSubmit={handleSubmit}  action="" className="flex flex-col space-y-3">
                           <div className="flex flex-col">
                             <label htmlFor="">نام و نام خانوادگی: </label>
-                            <input type="text" className="w-8/12 border border-black focus:outline-none px-3 py-1 rounded-md" />
+                            <input onChange={handleName} type="text" className="w-8/12 border border-black focus:outline-none px-3 py-1 rounded-md" />
                           </div>
                           <div className="flex flex-col">
                             <label htmlFor="">رمز عبور:</label>
@@ -68,7 +78,7 @@ export default function Login({ open, setOpen }) {
                     Submit
                   </button>
                 </div>
-              </Dialog.Panel>
+              </Dialog>
             </Transition.Child>
           </div>
         </div>
