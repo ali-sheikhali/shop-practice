@@ -26,7 +26,7 @@ function Navbar() {
               />
             </div>
           </div>
-          <h1>Shoes Shop</h1>
+         <Link to="/"> <h1 className="font-bold text-2xl hover:text-black">Shoes Shop</h1></Link>
           <div className="navbar-right">
             {showName && (
               <Login
